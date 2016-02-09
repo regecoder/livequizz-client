@@ -3,6 +3,7 @@
 
     angular
         .module('myApp')
+        .constant('appUrlPrefix', 'app')
         .value('config', {
             appName: 'Livequizz',
             appVersion: '0.1',

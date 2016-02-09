@@ -1,0 +1,26 @@
+<ons-navigator var="myNav">
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
+        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+    <div class="center">Some App with sliding menu</div>
+    <div class="right">
+      <ons-toolbar-button>
+          <ons-icon icon="refresh" size="30px" fixed-width="true"></ons-icon>
+      </ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <ons-list>
+      <ons-list-item ng-click="myNav.pushPage('app/test/newpage.html')">
+           Some list item
+      </ons-list-item>
+       <ons-list-item ng-click="myNav.pushPage('app/test/newpage2.html')">
+           Some list item2
+      </ons-list-item>
+  </ons-list>
+</ons-page>
+</ons-navigator>

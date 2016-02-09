@@ -21,7 +21,11 @@
         $stateProvider
             .state('user-login', {
                 url: '/user-login',
-                templateUrl: 'app/user/user-login.html'
+                params: {
+                    mainPage: 'app/test/browsehotels.html'
+                },
+                // templateUrl: 'app/user/user-login.html'
+                templateUrl: 'app/test/menu.html'
             });
 
         $stateProvider

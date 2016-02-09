@@ -1,0 +1,31 @@
+<ons-page ng-controller="UserPseudoController">
+    <ons-toolbar>
+        <div class="center">{{title}}</div>
+    </ons-toolbar>
+
+    <ons-list modifier="inset" style="margin-top: 10px">
+        <ons-list-item class="to-wrapper">
+            <ons-row>
+                <ons-col width="50px">
+                    <img src="assets/images/avatar-glasses.png" width="50" class="to-image">
+                </ons-col>
+                <ons-col>
+                <div class="to-name"></div>
+                </ons-col>
+            </ons-row>
+        </ons-list-item>
+
+        <ons-list-item>
+            <input ng-model="pseudo" type="text" class="text-input" placeholder="{{pseudo}}" style="width: 100%">
+        </ons-list-item>
+        <ons-list-item>
+            <div>{{quiz}}</div>
+        </ons-list-item>
+    </ons-list>
+
+    <div style="padding: 10px 9px">
+        <ons-button ng-click="onSubmit()" modifier="large">
+            Send
+        </ons-button>
+    </div>
+</ons-page>

@@ -1,0 +1,14 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="center">LIVE QUIZZ</div>
+    </ons-toolbar>
+
+    <div id="main" ng-controller="UserChooseGameController as userChooseGame">
+        <div class="block">
+            <ons-button modifier="large" ng-click="userChooseGame.onClickCreateButton()">LANCER UNE PARTIE</ons-button>
+        </div>
+        <div class="block">
+            <ons-button modifier="large" ng-click="userChooseGame.onClickJoinButton()">REJOINDRE UNE PARTIE</ons-button>
+        </div>
+    </div>
+</ons-page>

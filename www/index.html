@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -12,11 +12,19 @@
 
 <body>
 
-    <ons-navigator var="onsNavigator" animation="none"></ons-navigator>
+    <div id="wrapper" ng-app="myApp">
+        <div ui-view></div>
+    </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/OnsenUI/js/onsenui.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <script src="lib/OnsenUI/js/onsenui.min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/config/config.js"></script>
+    <script src="app/config/config.service.js"></script>
+    <script src="app/user/user-login.controller.js"></script>
+    <script src="app/user/user-choose-game.controller.js"></script>
 </body>
 </html>

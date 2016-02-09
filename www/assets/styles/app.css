@@ -1,0 +1,12 @@
+#main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.block {
+    margin: 20px 0;
+}
+
+input[type=text] {
+  width: 100%;
+}

@@ -1,6 +1,6 @@
-hooks/
-merges/
-node_modules/
-platforms/
-plugins/
-www/res/
+hooks
+merges
+node_modules
+platforms
+plugins
+www/lib

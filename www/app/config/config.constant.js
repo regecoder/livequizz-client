@@ -3,10 +3,9 @@
 
     angular
         .module('myApp')
-        .constant('appUrlPrefix', 'app')
-        .value('config', {
+        .constant('configConstant', {
             appName: 'Livequizz',
             appVersion: '0.1',
-            apiUrl: ''
+            apiUrl: 'config.json'
         });
 })();

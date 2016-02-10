@@ -5,9 +5,9 @@
         .module('myApp')
         .factory('configService', configService);
 
-    configService.$inject = ['$http', '$log', 'config'];
+    configService.$inject = ['$http', '$log', 'configConstant'];
 
-    function configService($http, $log, config) {
+    function configService($http, $log, configConstant) {
 
         var configFile = 'app/config/config.json';
 
@@ -30,7 +30,7 @@
         }
 
         function setConfig(data) {
-            config.apiUrl = data.apiUrl;
+            configConstant.apiUrl = data.apiUrl;
         }
     }
 })();

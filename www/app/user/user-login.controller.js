@@ -12,8 +12,7 @@
         var vm = this;
 
         vm.onClickLoginButton = function() {
-            console.log('onClickLoginButton');
-            $state.go('user-choose-game');
+            $state.go('game-choose');
         };
     }
 })();

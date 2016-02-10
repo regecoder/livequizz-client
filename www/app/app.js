@@ -2,7 +2,13 @@
     'use strict';
 
     angular
-        .module('myApp', ['onsen', 'ui.router', 'ngResource'])
+        .module('myApp', [
+            'onsen',
+            'ui.router',
+            'ngResource',
+            'LocalStorageModule',
+            'btford.socket-io'
+        ])
         .config(config)
         .run(run);
 
@@ -21,17 +27,16 @@
         $stateProvider
             .state('user-login', {
                 url: '/user-login',
-                params: {
-                    mainPage: 'app/test/browsehotels.html'
-                },
-                // templateUrl: 'app/user/user-login.html'
-                templateUrl: 'app/test/menu.html'
+                templateUrl: 'app/user/user-login.html'
             });
 
         $stateProvider
-            .state('user-choose-game', {
-                url: '/user-choose-game',
-                templateUrl: 'app/user/user-choose-game.html'
+            .state('game-choose', {
+                url: '/game-choose',
+                params: {
+                    mainPage: 'app/game/game-choose.html'
+                },
+                templateUrl: 'app/components/sliding-menu-page/sliding-menu-page.html'
             });
     }
 })();

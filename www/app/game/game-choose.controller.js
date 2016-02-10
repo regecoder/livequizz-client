@@ -3,11 +3,11 @@
 
     angular
         .module('myApp')
-        .controller('UserChooseGameController', UserChooseGameController);
+        .controller('GameChooseController', GameChooseController);
 
-    UserChooseGameController.$inject = ['$state'];
+    GameChooseController.$inject = ['$state'];
 
-    function UserChooseGameController($state) {
+    function GameChooseController($state) {
 
         var vm = this;
 

@@ -5,32 +5,38 @@
         .module('myApp')
         .factory('configService', configService);
 
-    configService.$inject = ['$http', '$log', 'configConstant'];
+    configService.$inject = ['$http', '$log', 'configConstant', 'configValue'];
 
-    function configService($http, $log, configConstant) {
+    function configService($http, $log, configConstant, configValue) {
 
-        var configFile = 'app/config/config.json';
+        var configJsonFile = 'app/config/config.json';
 
         return {
-            loadConfig: loadConfig
+            loadConfigJson: loadConfigJson,
+            setAppContext: setAppContext
         };
 
-        function loadConfig() {
+        function loadConfigJson() {
 
-            $http.get(configFile)
-                .then(loadConfigComplete, loadConfigFailed);
+            $http.get(configJsonFile)
+                .then(loadConfigJsonComplete, loadConfigJsonFailed);
 
-            function loadConfigComplete(response) {
-                setConfig(response.data);
+            function loadConfigJsonComplete(response) {
+                setConfigConstant(response.data);
             }
 
-            function loadConfigFailed(error) {
-                $log.error('configService: Failed for loadConfig.' + error.data);
+            function loadConfigJsonFailed(error) {
+                $log.error('configService: Failed for loadConfigJson: ' + error.data);
             }
         }
 
-        function setConfig(data) {
-            configConstant.apiUrl = data.apiUrl;
+        function setConfigConstant(data) {
+            configConstant.apiServerUrl = data.apiServerUrl;
+            configConstant.socketServerUrl = data.socketServerUrl;
+        }
+
+        function setAppContext(appContext) {
+            configValue.appContext = appContext;
         }
     }
 })();

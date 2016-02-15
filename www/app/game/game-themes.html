@@ -1,0 +1,18 @@
+<!-- rv0.0.1 -->
+
+<ons-navigator var="onsNavigator">
+    <ons-page>
+        <ons-toolbar>
+            <div class="center">game-themes</div>
+        </ons-toolbar>
+
+        <div id="main" ng-controller="GameThemesController as gameThemes">
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameThemes.onClickTheme1Button()">THEME 1</ons-button>
+            </div>
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameThemes.onClickTheme2Button()">THEME 2</ons-button>
+            </div>
+        </div>
+    </ons-page>
+</ons-navigator>

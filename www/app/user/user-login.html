@@ -1,14 +1,16 @@
+<!-- rv0.0.1 -->
+
 <ons-page>
     <ons-toolbar>
-        <div class="center">LIVE QUIZZ</div>
+        <div class="center">user-login</div>
     </ons-toolbar>
 
     <div id="main" ng-controller="UserLoginController as userLogin">
         <div class="block">
-            <input type="text" class="text-input" placeholder="" value=""/>
+            <input type="text" class="text-input" placeholder="" ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">
         </div>
         <div class="block">
-            <ons-button modifier="large" ng-click="userLogin.onClickLoginButton()">C'EST PARTI !</ons-button>
+            <ons-button var="loginButton" modifier="large" ng-click="userLogin.onClickLoginButton()">C'EST PARTI !</ons-button>    
         </div>
     </div>
 </ons-page>

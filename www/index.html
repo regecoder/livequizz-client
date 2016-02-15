@@ -7,12 +7,12 @@
 
     <link rel="stylesheet" href="lib/OnsenUI/css/onsenui.css">
     <link rel="stylesheet" href="lib/OnsenUI/css/onsen-css-components.css">
-    <link rel="stylesheet" href="assets/styles/app.css"/>
+    <link rel="stylesheet" href="assets/styles/app.css">
 </head>
 
 <body>
 
-    <div id="wrapper" ng-app="myApp">
+    <div id="wrapper">
         <div ui-view></div>
     </div>
 
@@ -22,13 +22,25 @@
     <script src="lib/angular-resource/angular-resource.min.js"></script>
     <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="lib/angular-socket-io/socket.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
     <script src="lib/OnsenUI/js/onsenui.min.js"></script>
     <script src="lib/socket.io-client/socket.io.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/underscore/underscore-min.js"></script>
     <script src="app/app.js"></script>
+    <script src="app/cordova-init.js"></script>
+    <script src="app/components/sliding-menu-page/sliding-menu-page.controller.js"></script>
+    <script src="app/components/socket/socket.js"></script>
     <script src="app/config/config.constant.js"></script>
+    <script src="app/config/config.value.js"></script>
     <script src="app/config/config.service.js"></script>
+    <script src="app/components/init-page/init-page.controller.js"></script>
     <script src="app/user/user-login.controller.js"></script>
     <script src="app/game/game-choose.controller.js"></script>
-    <script src="app/components/sliding-menu-page/sliding-menu-page.controller.js"></script>
+    <script src="app/game/game-join.controller.js"></script>
+    <script src="app/game/game-players.controller.js"></script>
+    <script src="app/game/game-themes.controller.js"></script>
+    <script src="app/game/game-question.controller.js"></script>
+    <script src="app/game/game-results.controller.js"></script>
 </body>
 </html>

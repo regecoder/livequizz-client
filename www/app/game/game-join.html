@@ -8,15 +8,12 @@
                 <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">game-choose</div>
+            <div class="center">game-join</div>
         </ons-toolbar>
 
-        <div id="main" ng-controller="GameChooseController as gameChoose">
+        <div id="main" ng-controller="GameJoinController as gameJoin">
             <div class="block">
-                <ons-button modifier="large" ng-click="gameChoose.onClickCreateButton()">LANCER UNE PARTIE</ons-button>
-            </div>
-            <div class="block">
-                <ons-button modifier="large" ng-click="gameChoose.onClickJoinButton()">REJOINDRE UNE PARTIE</ons-button>
+                <ons-button modifier="large" ng-click="gameJoin.onClickJoinButton()">REJOINDRE</ons-button>
             </div>
         </div>
     </ons-page>

@@ -18,9 +18,12 @@
     "trailing": true,
     "smarttabs": true,
     "white": true,
-    "predef": [
-        "angular",
-        "ons",
-        "onsNavigator"
-    ]
+    "globals": {
+        "window": false,
+        "document": false,
+        "jQuery": false,
+        "$": false,
+        "angular": false,
+        "_": false
+    }
 }

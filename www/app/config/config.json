@@ -1,3 +1,4 @@
 {
-    "apiUrl": "http://192.168.9.102:8080/api"
+    "apiServerUrl": "http://127.0.0.1:8080/api",
+    "socketServerUrl": "http://127.0.0.1:8080"
 }

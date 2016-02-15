@@ -5,16 +5,16 @@
         .module('myApp')
         .factory('quizService', quizService);
 
-    quizService.$inject = ['$resource', 'config'];
+    quizService.$inject = ['$resource', 'configConstant'];
 
-    function quizService($resource, config) {
+    function quizService($resource, configConstant) {
 
         var url,
             params,
             actions,
             quizResource;
 
-        url = config.apiUrl + '/quiz/:id';
+        url = configConstant.apiServerUrl + '/quiz/:id';
         params = {
             id: '@id'
         };

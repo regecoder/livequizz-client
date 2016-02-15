@@ -1,0 +1,24 @@
+<!-- rv0.0.1 -->
+
+<ons-navigator var="onsNavigator">
+    <ons-page>
+        <ons-toolbar>
+            <div class="center">game-question</div>
+        </ons-toolbar>
+
+        <div id="main" ng-controller="GameQuestionController as gameQuestion">
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer1Button()">ANSWER 1</ons-button>
+            </div>
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer2Button()">ANSWER 2</ons-button>
+            </div>
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer3Button()">ANSWER 3</ons-button>
+            </div>
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer4Button()">ANSWER 4</ons-button>
+            </div>
+        </div>
+    </ons-page>
+</ons-navigator>

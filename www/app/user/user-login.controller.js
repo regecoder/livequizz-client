@@ -27,13 +27,12 @@
         socket.on('userPseudoNotAvailable', userPseudoNotAvailable);
 
         function initPage() {
-
             setLoginButtonState();
         }
 
         function setLoginButtonState() {
-            var loginButtonDisabled = (_.isUndefined(vm.pseudo) || _.isEmpty(vm.pseudo));
-            loginButton.setDisabled(loginButtonDisabled);
+            var isLoginButtonDisabled = (_.isUndefined(vm.pseudo) || _.isEmpty(vm.pseudo));
+            loginButton.setDisabled(isLoginButtonDisabled);
         }
 
         function userLogin() {
@@ -47,11 +46,18 @@
 
         function userLogged() {
 
-            var user = localStorageService.get('user') || {};
-            user.pseudo = vm.pseudo;
-            localStorageService.set('user', user);
+            var clientUser,
+                data;
 
-            $state.go('game-choose');   
+            clientUser = localStorageService.get('user') || {};
+            clientUser.pseudo = vm.pseudo;
+            localStorageService.set('user', clientUser);
+
+            data = {
+                clientUser: clientUser
+            };
+
+            $state.go('game-choose', data);   
         }
 
         function userPseudoNotAvailable() {

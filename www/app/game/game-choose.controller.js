@@ -5,35 +5,39 @@
         .module('myApp')
         .controller('GameChooseController', GameChooseController);
 
-    GameChooseController.$inject = ['$state', 'socket'];
+    GameChooseController.$inject = ['$state', '$stateParams', 'socket'];
 
-    function GameChooseController($state, socket) {
+    function GameChooseController($state, $stateParams, socket) {
 
         var vm = this;
 
-        vm.onClickCreateButton = onClickCreateButton;
-        vm.onClickJoinButton = onClickJoinButton;
+        vm.clientUser = $stateParams.clientUser;
 
         socket.on('gameCreated', gameCreated);
         socket.on('gameOwned', gameOwned);
 
+        vm.onClickCreateButton = onClickCreateButton;
+        vm.onClickJoinButton = onClickJoinButton;
+
         function onClickCreateButton() {
-            console.log('createGame');
             socket.emit('createGame');
         }
 
         function onClickJoinButton() {
-            console.log('joinGame');
-            socket.emit('joinGame');
+            var data = {
+                clientUser: vm.clientUser
+            };
+            $state.go('game-join', data);   
         }
 
         function gameCreated(data) {
-            console.log('gameCreated: ' + data.gameId);
+            console.log('gameCreated:' + data.game.id);
             $state.go('game-players', data);   
         }
 
+        // TODO
         function gameOwned(gameId) {
-            console.log('gameOwned: ' + gameId);
+            console.log('gameOwned:' + gameId);
             $state.go('game-players');   
         }
     }

@@ -1,16 +1,21 @@
 <!-- rv0.0.1 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
 <ons-page>
+
     <ons-toolbar>
         <div class="center">user-login</div>
     </ons-toolbar>
 
     <div id="main" ng-controller="UserLoginController as userLogin">
+
         <div class="block">
-            <input type="text" class="text-input" placeholder="" ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">
+            <input type="text" placeholder="" class="text-input" ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">
         </div>
+
         <div class="block">
             <ons-button var="loginButton" modifier="large" ng-click="userLogin.onClickLoginButton()">C'EST PARTI !</ons-button>    
         </div>
+
     </div>
 </ons-page>

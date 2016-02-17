@@ -1,18 +1,40 @@
-<!-- rv0.0.1 -->
+<!-- rv0.0.2 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
 <ons-navigator var="onsNavigator">
     <ons-page>
+
         <ons-toolbar>
             <div class="center">game-themes</div>
         </ons-toolbar>
 
         <div id="main" ng-controller="GameThemesController as gameThemes">
+
             <div class="block">
-                <ons-button modifier="large" ng-click="gameThemes.onClickTheme1Button()">THEME 1</ons-button>
+                User : {{gameThemes.userPseudo}}
             </div>
+
             <div class="block">
-                <ons-button modifier="large" ng-click="gameThemes.onClickTheme2Button()">THEME 2</ons-button>
+                Countdown : {{gameThemes.time}}
             </div>
+
+            <div class="block">
+                <ons-button var="theme1Button" modifier="large" ng-click="gameThemes.onClickTheme1Button()">{{gameThemes.theme1Name | uppercase}}</ons-button>
+            </div>
+
+            <div class="block">
+                <ons-button var="theme2Button" modifier="large" ng-click="gameThemes.onClickTheme2Button()">{{gameThemes.theme2Name | uppercase}}</ons-button>
+            </div>
+
+            <div class="block">
+                <div>
+                    Vote {{gameThemes.theme1Name | uppercase}} {{gameThemes.theme1Vote}}
+                </div>
+                <div>
+                    Vote {{gameThemes.theme2Name | uppercase}} {{gameThemes.theme2Vote}}
+                </div>
+            </div>
+
         </div>
     </ons-page>
 </ons-navigator>

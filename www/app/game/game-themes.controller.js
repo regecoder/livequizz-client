@@ -1,3 +1,5 @@
+/*globals theme1Button, theme2Button */
+
 (function(){
     'use strict';
 
@@ -5,18 +7,78 @@
         .module('myApp')
         .controller('GameThemesController', GameThemesController);
 
-    GameThemesController.$inject = ['$state'];
+    GameThemesController.$inject = ['$state', '$stateParams', 'socket'];
 
-    function GameThemesController($state) {
+    function GameThemesController($state, $stateParams, socket) {
 
         var vm = this;
 
+        // vm.game = $stateParams.game;
+        // vm.user = $stateParams.user;
+
+        vm.gameId = $stateParams.game.id;
+
+        vm.userPseudo = $stateParams.user.pseudo;
+
+        vm.theme1Name = $stateParams.game.quizEngine.quizList[0].theme;
+        vm.theme2Name = $stateParams.game.quizEngine.quizList[1].theme;
+
+        vm.theme1Vote = 0;
+        vm.theme2Vote = 0;
+
+        vm.time = '';
+
+        socket.on('themeVoted', themeVoted);
+        socket.on('quizStarted', quizStarted);
+        socket.on('quizIntroStarted', quizIntroStarted);
+        socket.on('quizIntroTETick', quizIntroTETick);
+        socket.on('quizIntroTETick', quizIntroTETick);
+        socket.on('quizIntroTEComplete', quizIntroTEComplete);
+
+
         vm.onClickTheme1Button = function() {
-            $state.go('game-question');
+            voteTheme(0);
         };
 
         vm.onClickTheme2Button = function() {
-            $state.go('game-question');
+            voteTheme(1);
         };
+
+        function voteTheme(themeIndex) {
+            disableButtons();
+            var data = {
+                gameId: vm.gameId,
+                themeIndex: themeIndex
+            };
+            socket.emit('voteTheme', data);
+        }
+
+        function disableButtons() {
+            theme1Button.setDisabled(true);
+            theme2Button.setDisabled(true);
+        }
+
+        function themeVoted(round) {
+            vm.theme1Vote = round.themeVotes[0];
+            vm.theme2Vote = round.themeVotes[1];
+        }
+
+        function quizStarted() {
+        }
+
+        function quizIntroStarted() {
+            console.log('quizIntroStarted');
+        }
+
+        function quizIntroTETick(data) {
+            vm.time = data.currentTime;   
+        }
+
+        function quizIntroTEComplete() {
+            var data = {
+                user: $stateParams.user
+            };
+            $state.go('game-question', data);  
+        }
     }
 })();

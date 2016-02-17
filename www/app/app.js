@@ -55,7 +55,8 @@
             .state('game-choose', {
                 url: '/game-choose',
                 params: {
-                    mainPage: 'app/game/game-choose.html'
+                    mainPage: 'app/game/game-choose.html',
+                    clientUser: null
                 },
                 templateUrl: 'app/components/sliding-menu-page/sliding-menu-page.html'
             });
@@ -64,7 +65,8 @@
             .state('game-join', {
                 url: '/game-join',
                 params: {
-                    mainPage: 'app/game/game-join.html'
+                    mainPage: 'app/game/game-join.html',
+                    clientUser: null
                 },
                 templateUrl: 'app/components/sliding-menu-page/sliding-menu-page.html'
             });
@@ -74,8 +76,8 @@
                 url: '/game-players',
                 params: {
                     mainPage: 'app/game/game-players.html',
-                    gameId: null,
-                    ownerUser: null
+                    game: null,
+                    user: null
                 },
                 templateUrl: 'app/components/sliding-menu-page/sliding-menu-page.html'
             });
@@ -83,13 +85,20 @@
         $stateProvider
             .state('game-themes', {
                 url: '/game-themes',
-                templateUrl: 'app/game/game-themes.html'
+                templateUrl: 'app/game/game-themes.html',
+                params: {
+                    game: null,
+                    user: null
+                }
             });
 
         $stateProvider
             .state('game-question', {
                 url: '/game-question',
-                templateUrl: 'app/game/game-question.html'
+                templateUrl: 'app/game/game-question.html',
+                params: {
+                    user: null
+                }
             });
 
         $stateProvider

@@ -15,3 +15,14 @@ input[type=text] {
     text-align: center;
     font-size: 2em;
 }
+
+/* Les classes ci-dessous masquent le spinner (boutons d'incrémentation) des champs de type number */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}

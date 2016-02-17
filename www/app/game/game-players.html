@@ -1,7 +1,11 @@
-<!-- rv0.0.1 -->
+<!-- rv0.0.2 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
+
+
 
 <ons-navigator var="onsNavigator">
     <ons-page>
+
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
@@ -12,9 +16,11 @@
         </ons-toolbar>
 
         <div id="main" ng-controller="GamePlayersController as gamePlayers">
+
             <div class="block">
-                Game: {{gamePlayers.gameId}}
+                Game: {{gamePlayers.game.id}}
             </div>
+
             <div class="block">
                 Players:
                 <ul>
@@ -23,9 +29,15 @@
                     </li>
                 </ul>
             </div>
-            <div class="block">
-                <ons-button modifier="large" ng-click="gamePlayers.onClickStartButton()">COMMENCER</ons-button>
+
+            <div class="block" ng-show="gamePlayers.onShowWaitingMessage()">
+                En attente des joueurs
             </div>
+
+            <div class="block">
+                <ons-button modifier="large" ng-show="gamePlayers.onShowStartButton()" ng-click="gamePlayers.onClickStartButton()">COMMENCER</ons-button>
+            </div>
+            
         </div>
     </ons-page>
 </ons-navigator>

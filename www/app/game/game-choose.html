@@ -1,7 +1,9 @@
 <!-- rv0.0.1 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
 <ons-navigator var="onsNavigator">
     <ons-page>
+
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
@@ -12,12 +14,19 @@
         </ons-toolbar>
 
         <div id="main" ng-controller="GameChooseController as gameChoose">
+
+            <div class="block">
+                User: {{gameChoose.clientUser.pseudo}}
+            </div>
+
             <div class="block">
                 <ons-button modifier="large" ng-click="gameChoose.onClickCreateButton()">LANCER UNE PARTIE</ons-button>
             </div>
+            
             <div class="block">
                 <ons-button modifier="large" ng-click="gameChoose.onClickJoinButton()">REJOINDRE UNE PARTIE</ons-button>
             </div>
+
         </div>
     </ons-page>
 </ons-navigator>

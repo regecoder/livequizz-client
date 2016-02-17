@@ -1,7 +1,9 @@
 <!-- rv0.0.1 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
 <ons-navigator var="onsNavigator">
     <ons-page>
+
         <ons-toolbar>
             <div class="left">
                 <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
@@ -12,8 +14,17 @@
         </ons-toolbar>
 
         <div id="main" ng-controller="GameJoinController as gameJoin">
+
             <div class="block">
-                <ons-button modifier="large" ng-click="gameJoin.onClickJoinButton()">REJOINDRE</ons-button>
+                User: {{gameJoin.clientUser.pseudo}}
+            </div>
+
+            <div class="block">
+                <input type="text" placeholder="" class="text-input" ng-model="gameJoin.gameId" ng-change="gameJoin.onChangeGameId()">
+            </div>
+
+            <div class="block">
+                <ons-button var="joinButton" modifier="large" ng-click="gameJoin.onClickJoinButton()">REJOINDRE</ons-button>    
             </div>
         </div>
     </ons-page>

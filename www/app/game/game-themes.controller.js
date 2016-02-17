@@ -30,10 +30,8 @@
 
         socket.on('themeVoted', themeVoted);
         socket.on('quizStarted', quizStarted);
-        socket.on('quizIntroStarted', quizIntroStarted);
-        socket.on('quizIntroTETick', quizIntroTETick);
-        socket.on('quizIntroTETick', quizIntroTETick);
-        socket.on('quizIntroTEComplete', quizIntroTEComplete);
+        socket.on('quizBeginningTETick', quizBeginningTETick);
+        socket.on('quizBeginningTEComplete', quizBeginningTEComplete);
 
 
         vm.onClickTheme1Button = function() {
@@ -64,17 +62,14 @@
         }
 
         function quizStarted() {
+            console.log('quizStarted');
         }
 
-        function quizIntroStarted() {
-            console.log('quizIntroStarted');
-        }
-
-        function quizIntroTETick(data) {
+        function quizBeginningTETick(data) {
             vm.time = data.currentTime;   
         }
 
-        function quizIntroTEComplete() {
+        function quizBeginningTEComplete() {
             var data = {
                 user: $stateParams.user
             };

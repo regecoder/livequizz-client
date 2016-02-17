@@ -104,7 +104,11 @@
         $stateProvider
             .state('game-results', {
                 url: '/game-results',
-                templateUrl: 'app/game/game-results.html'
+                templateUrl: 'app/game/game-results.html',
+                params: {
+                    gameId: null,
+                    user: null
+                }
             });
     }
 })();

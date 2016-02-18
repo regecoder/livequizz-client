@@ -77,6 +77,7 @@
                 params: {
                     mainPage: 'app/game/game-players.html',
                     game: null,
+                    roundIndex: null,
                     user: null
                 },
                 templateUrl: 'app/components/sliding-menu-page/sliding-menu-page.html'

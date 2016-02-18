@@ -1,13 +1,13 @@
 <!-- rv0.0.1 -->
 <!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
-<ons-page>
+<ons-page ng-controller="UserLoginController as userLogin">
 
     <ons-toolbar>
         <div class="center">user-login</div>
     </ons-toolbar>
 
-    <div id="main" ng-controller="UserLoginController as userLogin">
+    <div id="main">
 
         <div class="block">
             <input type="text" placeholder="" class="text-input" ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">

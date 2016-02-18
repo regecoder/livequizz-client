@@ -2,13 +2,13 @@
 <!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
 <ons-navigator var="onsNavigator">
-    <ons-page>
+    <ons-page ng-controller="GameQuestionController as gameQuestion">
 
         <ons-toolbar>
             <div class="center">game-question</div>
         </ons-toolbar>
 
-        <div id="main" ng-controller="GameQuestionController as gameQuestion">
+        <div id="main">
 
             <div class="block">
                 User: {{gameQuestion.userPseudo}}

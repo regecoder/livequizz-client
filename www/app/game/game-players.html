@@ -4,7 +4,7 @@
 
 
 <ons-navigator var="onsNavigator">
-    <ons-page>
+    <ons-page ng-controller="GamePlayersController as gamePlayers">
 
         <ons-toolbar>
             <div class="left">
@@ -15,10 +15,14 @@
             <div class="center">game-players</div>
         </ons-toolbar>
 
-        <div id="main" ng-controller="GamePlayersController as gamePlayers">
+        <div id="main">
 
             <div class="block">
                 Game: {{gamePlayers.game.id}}
+            </div>
+
+            <div class="block">
+                Countdown : {{gamePlayers.time}}
             </div>
 
             <div class="block">

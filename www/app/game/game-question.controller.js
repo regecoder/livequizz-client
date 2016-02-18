@@ -28,17 +28,21 @@
 
 
         vm.onClickAnswer1Button = function() {
-            $state.go('game-results');
+            // $state.go('game-results');
+            // console.log('answerButton1');
 
         };
 
         vm.onClickAnswer2Button = function() {
+            // console.log('answerButton2');
         };
 
         vm.onClickAnswer3Button = function() {
+            // console.log('answerButton3');
         };
 
         vm.onClickAnswer4Button = function() {
+            // console.log('answerButton4');
         };
 
         function quizQuestion(data) {
@@ -53,7 +57,9 @@
         }   
 
         function quizQuestionTETick(data) {
-            vm.time = data.currentTime;   
+            vm.time = data.currentTime;
+            console.log('currentTime:' + data.currentTime);   
+            console.log('totalTime:' + data.totalTime);   
         }
 
         function quizEnd() {

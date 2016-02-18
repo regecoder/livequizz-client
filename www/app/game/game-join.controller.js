@@ -33,14 +33,10 @@
         }
 
         function onClickJoinButton() {
-            console.log('onClickJoinButton gameId: ' + vm.gameId);
             socket.emit('joinGame', vm.gameId);
-
-            // $state.go('game-players');
         }
 
         function gameJoined(data) {
-            console.log('gameJoined: ' + data.game.id + '/socketId: ' + data.user.socketId + '/players: ' + data.game.usersCount);
             $state.go('game-players', data);  
         }
     }

@@ -15,6 +15,7 @@
         vm.isBusy = false;
 
         socket.on('gameQuit', gameQuit);
+        socket.on('gameContinued', gameContinued);
 
         vm.onClickQuitButton = function() {
             if (vm.isBusy === true) {
@@ -25,11 +26,19 @@
         };
 
         vm.onClickContinueButton = function() {
-            $state.go('game-themes');
+            if (vm.isBusy === true) {
+                return;
+            }
+            vm.isBusy = true;
+            socket.emit('continueGame', vm.gameId);
         };
 
         function gameQuit() {
             $state.go('user-login');
+        }
+
+        function gameContinued(data) {
+            $state.go('game-players', data);  
         }
     }
 })();

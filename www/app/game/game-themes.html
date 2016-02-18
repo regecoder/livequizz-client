@@ -2,13 +2,13 @@
 <!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
 <ons-navigator var="onsNavigator">
-    <ons-page>
+    <ons-page ng-controller="GameThemesController as gameThemes">
 
         <ons-toolbar>
             <div class="center">game-themes</div>
         </ons-toolbar>
 
-        <div id="main" ng-controller="GameThemesController as gameThemes">
+        <div id="main">
 
             <div class="block">
                 User : {{gameThemes.userPseudo}}

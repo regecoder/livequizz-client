@@ -4,29 +4,40 @@
 <ons-navigator var="onsNavigator">
     <ons-page ng-controller="GameChooseController as gameChoose">
 
-        <ons-toolbar>
-            <div class="left">
-                <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
+    <ons-toolbar class="header">
+        <div class="left">
+            <ons-toolbar-button ng-click="menu.toggleMenu()">
                 <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-                </ons-toolbar-button>
-            </div>
-            <div class="center">game-choose</div>
-        </ons-toolbar>
+            </ons-toolbar-button>
+        </div>
+        <div class="center logo">Live quizz</div>
+    </ons-toolbar>
+        
+    
+    <!-- OVERLAY -->
+    <div id="overlay"></div>
+
+    <!-- FOND -->
+    <div class="fond-i"></div>
+    <div class="fond-i2"></div>
+    <div class="cercle-g"></div>
+    <div class="bandeau-h"></div>
+    <div class="bulle-orange-r"></div>
+    
+        
+    <div id="page-wrapper">
 
         <div id="main">
 
-            <div class="block">
+        <!--    <div class="block">
                 User: {{gameChoose.clientUser.pseudo}}
-            </div>
+            </div>-->
 
-            <div class="block">
-                <ons-button modifier="large" ng-click="gameChoose.onClickCreateButton()">LANCER UNE PARTIE</ons-button>
-            </div>
+                <ons-button class="o-btn o-btn-double mt20 btn-space-s2" ng-click="gameChoose.onClickCreateButton()"><span>Lancer une partie</span></ons-button>
             
-            <div class="block">
-                <ons-button modifier="large" ng-click="gameChoose.onClickJoinButton()">REJOINDRE UNE PARTIE</ons-button>
-            </div>
-
+                <ons-button class="o-btn o-btn-double" ng-click="gameChoose.onClickJoinButton()"><span>Rejoindre une partie</span></ons-button>
+            
+        </div>
         </div>
     </ons-page>
 </ons-navigator>

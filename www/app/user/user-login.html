@@ -1,21 +1,46 @@
-<!-- rv0.0.1 -->
+<!-- ov0.0.2 -->
 <!-- NE PAS MODIFIER LES TAGS ng- et var -->
 
-<ons-page ng-controller="UserLoginController as userLogin">
+<ons-page>
 
-    <ons-toolbar>
-        <div class="center">user-login</div>
+    <ons-toolbar class="header">
+        <div class="left">
+
+        </div>
+        <div class="center logo">Live quizz</div>
     </ons-toolbar>
 
-    <div id="main">
+    <!-- OVERLAY -->
+    <div id="overlay"></div>
 
-        <div class="block">
-            <input type="text" placeholder="" class="text-input" ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">
-        </div>
+    <!-- FOND -->
+    <div class="fond-i"></div>
+    <div class="fond-i2"></div>
+    <div class="cercle-d"></div>
 
-        <div class="block">
-            <ons-button var="loginButton" modifier="large" ng-click="userLogin.onClickLoginButton()">C'EST PARTI !</ons-button>    
-        </div>
+    <div id="page-wrapper">
+        <div id="main" ng-controller="UserLoginController as userLogin">
+            <div class="o-cartouche btn-space-s1 mt20">
+                <div class="o-titre mb15">Bienvenue dans<span>Live Quizz</span></div>
+                <div class="o-avatar-select">
+                    <ons-carousel class="o-avatar" swipeable overscrollable auto-scroll item-width="90px" item-height="90px">
 
+                        <ons-carousel-item ng-repeat="i in [1, 2, 3, 4, 5, 6, 7, 8, 9]">
+                            <img src="assets/images/avatars/avatar-0{{i}}.png" alt="">
+                        </ons-carousel-item>
+
+                    </ons-carousel>
+                </div>
+                <form>
+                    <input type="text" class="text-input o-nickname-input" placeholder="Chouquette poilue"  ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">
+                </form>
+
+
+                <!--            <div class="block">
+                                <input type="text" placeholder="" class="text-input" ng-model="userLogin.pseudo" ng-change="userLogin.onChangePseudo()">
+                            </div> -->
+            </div>
+            <ons-button class="o-btn"  var="loginButton" ng-click="userLogin.onClickLoginButton()"><span>C&rsquo;EST PARTI  !</span></ons-button>
     </div>
+
 </ons-page>

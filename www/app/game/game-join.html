@@ -4,27 +4,43 @@
 <ons-navigator var="onsNavigator">
     <ons-page ng-controller="GameJoinController as gameJoin">
 
-        <ons-toolbar>
+        <ons-toolbar class="header">
             <div class="left">
-                <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                <ons-toolbar-button ng-click="menu.toggleMenu()">
+                    <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">game-join</div>
+            <div class="center logo">Live quizz</div>
         </ons-toolbar>
 
-        <div id="main">
+        <!-- OVERLAY -->
+        <div id="overlay"></div>
 
-            <div class="block">
-                User: {{gameJoin.clientUser.pseudo}}
-            </div>
+        <!-- FOND -->
+        <div class="fond-i">
+            <div class="fond-i2"></div>
+            <div class="bang-r"></div>
+        </div>
 
-            <div class="block">
-                <input type="text" placeholder="" class="text-input" ng-model="gameJoin.gameId" ng-change="gameJoin.onChangeGameId()">
-            </div>
 
-            <div class="block">
-                <ons-button var="joinButton" modifier="large" ng-click="gameJoin.onClickJoinButton()">REJOINDRE</ons-button>    
+        <div id="page-wrapper">
+            <div id="main">
+
+                <!--    <div class="block">
+                        User: {{gameJoin.clientUser.pseudo}}
+                    </div>-->
+
+                <div class="o-cartouche mt20 btn-space-s8">
+                    <div class="o-titre mb10">Rejoindre<br>une partie</div>
+                    <p class="o-grey mb10">Saisissez le code</p>
+                    <form>
+                        <input type="text" class="text-input o-code-input" placeholder="" ng-model="gameJoin.gameId" ng-change="gameJoin.onChangeGameId()">
+                    </form>
+                    <p class="o-grey"><small>Demandez le code au joueur<br>qui a créé la partie</small></p>
+                </div>
+
+                <ons-button class="o-btn" var="joinButton" modifier="large" ng-click="gameJoin.onClickJoinButton()"><span>J&rsquo;arrive !</span></ons-button>    
+
             </div>
         </div>
     </ons-page>

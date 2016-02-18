@@ -1,0 +1,51 @@
+<!-- rv0.0.1 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
+
+<ons-navigator var="onsNavigator">
+    <ons-page ng-controller="GameQuestionController as gameQuestion">
+
+        <ons-toolbar>
+            <div class="center">game-question</div>
+        </ons-toolbar>
+
+        <div id="main">
+
+            <div class="block">
+                User: {{gameQuestion.userPseudo}}
+            </div>
+
+            <div class="block">
+                Quiz: {{gameQuestion.quizName}}
+            </div>
+
+            <div class="block">
+                Countdown: {{gameQuestion.time}}
+            </div>
+
+            <div class="block">
+                Question: {{gameQuestion.questionNumber()}}
+            </div>
+
+            <div class="block">
+                {{gameQuestion.question.text}}
+            </div>
+
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer1Button()">{{gameQuestion.question.answer[0].text}}</ons-button>
+            </div>
+
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer2Button()">{{gameQuestion.question.answer[1].text}}</ons-button>
+            </div>
+
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer3Button()">{{gameQuestion.question.answer[2].text}}</ons-button>
+            </div>
+
+            <div class="block">
+                <ons-button modifier="large" ng-click="gameQuestion.onClickAnswer4Button()">{{gameQuestion.question.answer[3].text}}</ons-button>
+            </div>
+
+        </div>
+    </ons-page>
+</ons-navigator>

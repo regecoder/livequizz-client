@@ -1,47 +1,61 @@
-<!-- rv0.0.2 -->
+<!-- rv0.0.1 -->
 <!-- NE PAS MODIFIER LES TAGS ng- et var -->
-
-
 
 <ons-navigator var="onsNavigator">
     <ons-page ng-controller="GamePlayersController as gamePlayers">
 
-        <ons-toolbar>
+        <ons-toolbar class="header">
             <div class="left">
-                <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                <ons-toolbar-button ng-click="menu.toggleMenu()">
+                    <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                 </ons-toolbar-button>
             </div>
-            <div class="center">game-players</div>
+            <div class="center logo">Live quizz</div>
         </ons-toolbar>
 
-        <div id="main">
+        <!-- OVERLAY -->
+        <div id="overlay"></div>
 
-            <div class="block">
-                Game: {{gamePlayers.game.id}}
-            </div>
-
-            <div class="block">
-                Countdown : {{gamePlayers.time}}
-            </div>
-
-            <div class="block">
-                Players:
-                <ul>
-                    <li ng-repeat="player in gamePlayers.players track by player.socketId">
-                        {{player.pseudo}}
-                    </li>
-                </ul>
-            </div>
-
-            <div class="block" ng-show="gamePlayers.onShowWaitingMessage()">
-                En attente des joueurs
-            </div>
-
-            <div class="block">
-                <ons-button modifier="large" ng-show="gamePlayers.onShowStartButton()" ng-click="gamePlayers.onClickStartButton()">COMMENCER</ons-button>
-            </div>
-            
+        <!-- FOND -->
+        <div class="fond-i">
+            <div class="fond-i2"></div>
+            <div class="bang-r"></div>
         </div>
+
+        <div id="page-wrapper">
+            <div id="main">
+
+                <div class="o-cartouche-list mt15">
+                    <div class="o-titre mb5">Attente des joueurs</div>
+                    <p class="o-grey mb5"><small>Communiquez le code: {{gamePlayers.game.id}}</small></p>
+                </div>
+
+
+                <ons-list class="person-list mb15 height-list-lan">
+                    <ons-list-item class="person" modifier="tappable" ng-repeat="player in gamePlayers.players track by player.socketId">
+                        <ons-row>
+                            <ons-col width="12vw">
+                                <img src="assets/images/avatars/avatar-0{{i}}.png" class="person-image">
+                            </ons-col>
+                            <ons-col class="person-name">
+                                <div class="name">{{player.pseudo}}</div>
+                                <div class="profile">Profil</div>
+                            </ons-col>
+                        </ons-row>
+
+                    </ons-list-item>
+                </ons-list>
+
+ 
+
+                <ons-row>
+                    <ons-button class="o-btn o-btn-half"><span>Annuler<br>la partie</span></ons-button><ons-button class="o-btn o-btn-half" ng-click="gamePlayers.onClickStartButton()"><span>C&rsquo;est<br>parti !</span></ons-button>
+
+                </ons-row>
+
+            </div>
+        </div>
+
     </ons-page>
 </ons-navigator>
+<!--{{gamePlayers.gameId}}-->

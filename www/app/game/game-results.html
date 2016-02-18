@@ -3,21 +3,17 @@
 
 <ons-navigator var="onsNavigator">
     <ons-page ng-controller="GameResultsController as gameResults">
-
         <ons-toolbar>
             <div class="center">game-results</div>
         </ons-toolbar>
 
         <div id="main">
-
             <div class="block">
                 <ons-button modifier="large" ng-click="gameResults.onClickQuitButton()">QUITTER</ons-button>
             </div>
-
             <div class="block">
-                <ons-button modifier="large" ng-click="gameResults.onClickContinueButton()">NOUVELLE MANCHE</ons-button>
+                <ons-button modifier="large" ng-click="gameResults.onClickContinueButton()">NOUVELLE PARTIE</ons-button>
             </div>
-
         </div>
     </ons-page>
 </ons-navigator>

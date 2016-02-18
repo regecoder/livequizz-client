@@ -1,0 +1,47 @@
+<!-- rv0.0.2 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
+
+
+
+<ons-navigator var="onsNavigator">
+    <ons-page ng-controller="GamePlayersController as gamePlayers">
+
+        <ons-toolbar>
+            <div class="left">
+                <ons-toolbar-button ng-click="onsSlidingMenu.toggle()">
+                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                </ons-toolbar-button>
+            </div>
+            <div class="center">game-players</div>
+        </ons-toolbar>
+
+        <div id="main">
+
+            <div class="block">
+                Game: {{gamePlayers.game.id}}
+            </div>
+
+            <div class="block">
+                Countdown : {{gamePlayers.time}}
+            </div>
+
+            <div class="block">
+                Players:
+                <ul>
+                    <li ng-repeat="player in gamePlayers.players track by player.socketId">
+                        {{player.pseudo}}
+                    </li>
+                </ul>
+            </div>
+
+            <div class="block" ng-show="gamePlayers.onShowWaitingMessage()">
+                En attente des joueurs
+            </div>
+
+            <div class="block">
+                <ons-button modifier="large" ng-show="gamePlayers.onShowStartButton()" ng-click="gamePlayers.onClickStartButton()">COMMENCER</ons-button>
+            </div>
+            
+        </div>
+    </ons-page>
+</ons-navigator>

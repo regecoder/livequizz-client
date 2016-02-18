@@ -1,3 +1,5 @@
+/*globals answer1Button, answer2Button, answer3Button, answer4Button,  */
+
 (function(){
     'use strict';
 
@@ -14,52 +16,84 @@
         vm.gameId = -1;
         vm.userPseudo = $stateParams.user.pseudo;
         vm.quizName = '';
-        vm.questionIndex = -1;
+        vm.questionIndex = '';
         vm.question = {};
         vm.time = '';
+        vm.totalTime = '';
+        vm.showTimer = false;
+        vm.showAnswers = false;
+        vm.answerButtonClicked = 0;
+        vm.points = null;
 
         vm.questionNumber = function() {
             return vm.questionIndex + 1;
         };
 
         socket.on('quizQuestion', quizQuestion);
-        socket.on('quizQuestionTETick', quizQuestionTETick);
+        socket.on('quizAnswer', quizAnswer);
+        socket.on('quizResult', quizAnswer);
+        socket.on('quizAnswerTETick', quizAnswerTETick);
+        socket.on('quizResult', quizResult);
         socket.on('quizEnd', quizEnd);
 
+        vm.onClickAnswerButton = function(answerIndex) {
 
-        vm.onClickAnswer1Button = function() {
-            // $state.go('game-results');
-            // console.log('answerButton1');
+            var clickTime = vm.time;
+            setDisabledButtons(true);
 
+            vm.answerButtonClicked = answerIndex;
+
+
+            if (answerIndex === vm.goodAnswerIndex) {
+                vm.points = clickTime;
+            } else {
+                vm.points = 0;
+            }
         };
 
-        vm.onClickAnswer2Button = function() {
-            // console.log('answerButton2');
-        };
+        vm.onClassAnswerButton = function(answerIndex) {
 
-        vm.onClickAnswer3Button = function() {
-            // console.log('answerButton3');
-        };
+            var myClass;
 
-        vm.onClickAnswer4Button = function() {
-            // console.log('answerButton4');
+            if (vm.answerButtonClicked !== answerIndex) {
+                myClass = '';
+            } else {
+                if (answerIndex === vm.goodAnswerIndex) {
+                    myClass = 'button-green';
+                } else {
+                    myClass = 'button-red';
+                }
+            }
+
+            return myClass;
         };
 
         function quizQuestion(data) {
             console.log('quizQuestionStarted:' + data.questionIndex);
 
-            var myRoundClone = data.gameClone.rounds[data.gameClone.roundIndex]; 
+            var myRoundClone;
+
+            vm.showAnswers = false;
+            setDisabledButtons(false);
+
+            myRoundClone = data.gameClone.rounds[data.gameClone.roundIndex]; 
 
             vm.gameId = data.gameClone.id;
             vm.quizName = myRoundClone.quiz.theme;
             vm.questionIndex = data.questionIndex;
             vm.question = myRoundClone.quiz.questions[data.questionIndex].question;
+            vm.goodAnswerIndex = parseInt(vm.question.goodAnswer, 10);
+            vm.answerButtonClicked = 0;
         }   
 
-        function quizQuestionTETick(data) {
+        function quizAnswer() {
+            vm.showTimer = true;
+            vm.showAnswers = true;
+        }
+
+        function quizAnswerTETick(data) {
             vm.time = data.currentTime;
-            console.log('currentTime:' + data.currentTime);   
-            console.log('totalTime:' + data.totalTime);   
+            vm.totalTime = data.totalTime;
         }
 
         function quizEnd() {
@@ -68,6 +102,17 @@
                 user: $stateParams.user
             };
             $state.go('game-results', data);  
+        }
+
+        function quizResult() {
+            vm.showTimer = false;
+        }
+
+        function setDisabledButtons(isDisabled) {
+            answer1Button.setDisabled(isDisabled);
+            answer2Button.setDisabled(isDisabled);
+            answer3Button.setDisabled(isDisabled);
+            answer4Button.setDisabled(isDisabled);
         }
     }
 })();

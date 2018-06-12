@@ -1,0 +1,27 @@
+
+#anim1 {
+    background-image: url(../img/chou_1.svg);
+    background-size: 1000px;
+    z-index: 350;
+}
+#anim2 {
+    background-image: url(../img/chou_2.svg);
+    background-size: 100%;
+    z-index: 355;
+}
+#anim3 {
+    background-image: url(../img/chou_3.svg);
+    background-size: 50%;
+    z-index: 360;
+}
+#anim4 {
+    background-image: url(../img/chou_4.svg);
+    background-size: 30%;
+    z-index: 365;
+}
+#anim5 {
+    background-image: url(../img/chou_5.svg);
+    background-size: 100%;
+    opacity: 0;
+    z-index: 370;
+}

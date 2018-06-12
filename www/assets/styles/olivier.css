@@ -390,7 +390,7 @@ a {
     background-color: #cc4f1f;
 }
 .o-theme-text {
-    display: table-cell;
+    /*display: table-cell;*/
     font-family:'Montserrat-Black';
     text-transform:none;
     vertical-align: middle;

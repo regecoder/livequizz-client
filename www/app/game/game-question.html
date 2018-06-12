@@ -3,57 +3,50 @@
 
 <ons-navigator var="onsNavigator">
     <ons-page ng-controller="GameQuestionController as gameQuestion">
-
-        <ons-toolbar>
-            <div class="center">game-question</div>
+        <ons-toolbar class="header">
+            <div class="left points">{{gameQuestion.displayPoints()}}</div>
+            <div class="center logo">Live quizz</div>
+            <div class="right timer">{{gameQuestion.displayTime()}}</div>
         </ons-toolbar>
 
-        <div id="main">
+        <!-- OVERLAY -->
+        <div id="overlay"></div>
 
-            <div class="block">
-                User: {{gameQuestion.userPseudo}}
-                <br>
-                good answer : {{gameQuestion.goodAnswerIndex}}
-                <br>
-                Points : {{gameQuestion.points}}
+        <!-- FOND -->
+        <div class="fond-q">
+            <div class="fond-2"></div>
+            <div class="jasper"></div>
+            <div class="bandeau"></div>
+            <div class="bulle"><span>{{gameQuestion.questionNumber()}}</span></div> <!-- numéro de la question -->
+            <div class="tramebulle"></div>
+
+            <div id="animation">
+                <div id="anim1"></div>
+                <div id="anim2"></div>
+                <div id="anim3"></div>
+                <div id="anim4"></div>
+                <div id="anim5"></div>
+            </div>  
+        </div>
+
+        <div id="page-wrapper">
+            <div id="main">
+                <!-- <div class="o-question mt15 mb10"> -->
+                    <div class="r-question mt15 mb10">{{gameQuestion.question.text}}</div>
+                <!-- </div> -->
+
+                <div class="r-answers-container" ng-show="gameQuestion.showAnswers">
+
+                    <ons-button var="answer1Button" modifier="large" class="r-answer-button" ng-click="gameQuestion.onClickAnswerButton(1)" ng-class="gameQuestion.onClassAnswerButton(1)">{{gameQuestion.question.answer[0].text}}</ons-button>
+
+                    <ons-button var="answer2Button" modifier="large" class="r-answer-button" ng-click="gameQuestion.onClickAnswerButton(2)" ng-class="gameQuestion.onClassAnswerButton(2)">{{gameQuestion.question.answer[1].text}}</ons-button>
+
+                    <ons-button var="answer3Button" modifier="large" class="r-answer-button" ng-click="gameQuestion.onClickAnswerButton(3)" ng-class="gameQuestion.onClassAnswerButton(3)">{{gameQuestion.question.answer[2].text}}</ons-button>
+
+                    <ons-button var="answer4Button" modifier="large" class="r-answer-button" ng-click="gameQuestion.onClickAnswerButton(4)" ng-class="gameQuestion.onClassAnswerButton(4)">{{gameQuestion.question.answer[3].text}}</ons-button>
+
+                </div>
             </div>
-
-            <div class="block">
-                Quiz: {{gameQuestion.quizName}}
-            </div>
-
-            <div class="block" ng-show="gameQuestion.showTimer">
-                Countdown: {{gameQuestion.time}}
-            </div>
-
-            <div class="block">
-                Question: {{gameQuestion.questionNumber()}}
-            </div>
-
-            <div class="block">
-                {{gameQuestion.question.text}}
-            </div>
-
-            <div id="answers" ng-show="gameQuestion.showAnswers">
-
-            <div class="block">
-                <ons-button var="answer1Button" modifier="large" ng-click="gameQuestion.onClickAnswerButton(1)" ng-class="gameQuestion.onClassAnswerButton(1)">{{gameQuestion.question.answer[0].text}}</ons-button>
-            </div>
-
-            <div class="block">
-                <ons-button var="answer2Button" modifier="large" ng-click="gameQuestion.onClickAnswerButton(2)" ng-class="gameQuestion.onClassAnswerButton(2)">{{gameQuestion.question.answer[1].text}}</ons-button>
-            </div>
-
-            <div class="block">
-                <ons-button var="answer3Button" modifier="large" ng-click="gameQuestion.onClickAnswerButton(3)" ng-class="gameQuestion.onClassAnswerButton(3)">{{gameQuestion.question.answer[2].text}}</ons-button>
-            </div>
-
-            <div class="block">
-                <ons-button var="answer4Button" modifier="large" ng-click="gameQuestion.onClickAnswerButton(4)" ng-class="gameQuestion.onClassAnswerButton(4)">{{gameQuestion.question.answer[3].text}}</ons-button>
-            </div>
-
-            </div>
-
         </div>
     </ons-page>
 </ons-navigator>

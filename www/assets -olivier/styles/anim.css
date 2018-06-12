@@ -1,0 +1,35 @@
+#overlay {
+    background-color: #000;
+    position: absolute;
+    z-index: 500;
+    opacity: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+#animation {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 290;
+    opacity: 0;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
+}
+#anim1, #anim2, #anim3, #anim4, #anim5 {
+    position: absolute;
+    background-attachment:fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    height: 100vh;
+    width: 100vw;
+    opacity: 1;
+    overflow: hidden;
+}

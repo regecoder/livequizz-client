@@ -3,16 +3,50 @@
 
 <ons-navigator var="onsNavigator">
     <ons-page ng-controller="GameResultsController as gameResults">
-        <ons-toolbar>
-            <div class="center">game-results</div>
+        <ons-toolbar class="header">
+            <div class="center logo">Live quizz</div>
+            <div class="right pie degree">
+                <span class="block"></span>
+                <span id="time">{{gameQuestion.time}}</span>
+            </div>
         </ons-toolbar>
 
-        <div id="main">
-            <div class="block">
-                <ons-button modifier="large" ng-click="gameResults.onClickQuitButton()">QUITTER</ons-button>
-            </div>
-            <div class="block">
-                <ons-button modifier="large" ng-click="gameResults.onClickContinueButton()">NOUVELLE PARTIE</ons-button>
+        <!-- FOND -->
+        <div class="fond-r"></div>
+        <div class="fond-3"></div>
+        <div class="fond-i2"></div>
+        <div class="bulle-l"></div>
+
+        <div id="page-wrapper">
+            <div id="main">
+                <div class="o-cartouche-list mt20">
+                    <div class="o-titre mb5">Manche {{gameResults.game.roundIndex}}</div>
+                    <p class="o-grey mb5"><small>{{gameResults.winnerText()}} a gagné !</small></p>
+                </div>
+                
+                <ons-list class="person-list mb15 height-list-res" ng-repeat="char in ['Attente des joueurs']">
+                    <ons-list-item class="person" modifier="tappable" ng-repeat="player in gameResults.players track by player.socketId | orderBy:'-player.points'">
+                        <ons-row>
+                            
+                            <ons-col width="12vw">
+                                <img src="assets/images/avatars/avatar-0{{i}}.png" class="person-image">
+                            </ons-col>
+                            
+                            <ons-col class="person-name" ng-repeat="char in ['Nom des joueurs']">
+                                <div class="name">{{player.pseudo}}</div>
+                                <div class="profile">{{player.profile}}</div>
+                            </ons-col>
+
+                            <ons-col class="person-name" width="12vw">
+                                <div class="total-points">{{player.displayPoints(player.points)}}</div>
+                            </ons-col>
+                            
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+                <ons-row>
+                    <ons-button class="o-btn o-btn-half" ng-click="gameResults.onClickQuitButton()"><span>Stop</span></ons-button><ons-button class="o-btn o-btn-half" ng-click="gameResults.onClickContinueButton()"><span>Encore !</span></ons-button>
+                </ons-row>
             </div>
         </div>
     </ons-page>

@@ -1,0 +1,274 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 févr. 2016, 10:25:46
+    Author     : olivier_robert
+*/
+@font-face {
+    font-family: 'komikax';
+    src: url(../fonts/komikax.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* INTRO */
+.fond-i {
+    height: 100vh;
+        position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff626;
+    background-image: url(../images/degrade_rose.svg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+}
+.fond-i2 {
+        position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #fff626;
+    opacity: 0.7;
+    z-index: 10;
+    height: 100vh;
+    width: 97vw;
+            overflow: hidden;
+
+}
+.cercle-d {
+    display: block;
+    position: fixed;
+    bottom:0;
+    right: 0;
+    background-image: url(../images/cercle_d.svg);
+    background-size: cover;
+    z-index: 20;
+    opacity: 0.6;
+    height: 33vh;
+    width: 33vh;
+}
+.cercle-g {
+    display: block;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    background-image: url(../images/cercle_g.svg);
+    background-size: cover;
+    z-index: 20;
+    opacity: 0.6;
+    height: 33vh;
+    width: 33vh;
+}
+.bandeau-h {
+    display: block;
+    background-color: #7875ae;
+    background-image: url(../images/trame_large.svg);
+    background-size: 150%;
+    z-index: 10;
+    opacity: 1;
+    height: 100px;
+    position: fixed;
+    width:100vw;
+    top:40px;
+}
+.bulle-orange-r {
+    display: block;
+    background-image: url(../images/bulle_orange_r.svg);
+    background-repeat: no-repeat;
+    z-index: 15;
+    position: fixed;
+    width: 251.438px;
+    height: 271.297px;
+    right:0;
+    top:20px;
+}
+.bulle-orange-l {
+    display: block;
+    background-image: url(../images/bulle_orange_l.svg);
+    background-repeat: no-repeat;
+    z-index: 15;
+    position: fixed;
+    width: 166.048px;
+    height: 271.297px;
+    left:0;
+    top:20px;
+}
+.bang-r {
+    display: block;
+    position: fixed;
+    bottom:0px;
+    right: 0px;
+    background-image: url(../images/bang_r.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 20;
+    opacity: 1;
+    width: 352.912px;
+    height: 280.623px;
+}
+.bang-l {
+    display: block;
+    position: fixed;
+    bottom:0px;
+    left: 0px;
+    background-image: url(../images/bang_l.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 20;
+    opacity: 1;
+    width: 171.266px;
+    height: 278.523px;
+}
+.jasper-r {
+    background-image: url(../images/jasper_left.svg);
+    background-repeat: no-repeat;
+    opacity: 0.5;
+        z-index: 20;
+    position: absolute;
+    width:136.512px;
+    height: 176.57px;
+    top: 0;
+    right:0;
+}
+
+/* FIN INTRO */
+
+
+
+/* QUESTIONS */
+.fond-q {
+    height: 100vh;
+        position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #72cbf4;
+    background-image: url(../images/degrade_blanc.svg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+}
+.fond-r {
+    height: 100vh;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width:80vw;
+    background-color: #72cbf4;
+    background-image: url(../images/degrade_blanc.svg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    text-align: center;
+}
+.fond-2 {
+        height: 100vh;
+    background-color: #fff626;
+    opacity: 0.3;
+    width: 98vw;
+}
+.fond-3 {
+        height: 100vh;
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    background-color: #fff626;
+    background-image: url(../images/degrade_rose.svg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;    background-color: #fff626;
+    opacity: 1;
+    width: 20vw;
+}
+.jasper {
+    background-image: url(../images/jasper_right.svg);
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    position: fixed;
+    width:137px;
+    height: 177px;
+    top: 40px;
+    left:0;
+}
+
+.bandeau {
+    display: block;
+    background-color: #ed87b8;
+    background-image: url(../images/rayures.svg);
+    background-size: cover;
+    z-index: 200;
+    opacity: 1;
+    height: 100px;
+    position: fixed;
+    width:100vw;
+    bottom:0;
+}
+.bulle {
+    display: block;
+    background-image: url(../images/bulle_verte_r.svg);
+    background-repeat: no-repeat;
+    z-index: 200;
+    position: fixed;
+    width: 130.859px;
+    height: 152.029px;
+    right:0;
+    bottom:45px;
+}
+.bulle span {
+  display: block;
+    color: #fff;
+    font-family: 'komikax';
+    font-size:6.5em;
+    letter-spacing: 1px;
+    text-align: center;
+    position: fixed;
+    width: 95px;
+    height: 152.029px;
+    right:0;
+    bottom:72px;
+}
+.tramebulle {
+    display: block;
+    background-image: url(../images/trame_verte_r.svg);
+    background-repeat: no-repeat;
+    z-index: 250;
+    position: fixed;
+    width: 130.859px;
+    height: 152.029px;
+    right:0;
+    bottom:45px;
+}
+.bulle-l {
+    display: block;
+    background-image: url(../images/bulle_verte_l.svg);
+    background-repeat: no-repeat;
+    z-index: 200;
+    position: fixed;
+    width: 31.86px;
+    height: 102.379px;
+    left:0;
+    bottom:45px;
+}
+/* FIN QUESTIONS */
+
+

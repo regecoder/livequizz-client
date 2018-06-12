@@ -28,8 +28,8 @@
         socket.on('roundStarted', roundStarted);
         socket.on('autostartRoundTick', autostartRoundTick);
 
-        vm.onShowWaitingMessage = onShowWaitingMessage;
-        vm.onShowStartButton = onShowStartButton;
+        vm.onShowByOtherPlayers = onShowByOtherPlayers;
+        vm.onShowByOwner = onShowByOwner;
         vm.onClickStartButton = onClickStartButton;
 
         userIsOwner = (vm.game.ownerUser.socketId === vm.user.socketId);
@@ -59,11 +59,11 @@
             $state.go('game-themes', data);   
         }
 
-        function onShowWaitingMessage() {
+        function onShowByOtherPlayers() {
             return (userIsOwner === false || $stateParams.roundIndex > 0);
         }
 
-        function onShowStartButton() {
+        function onShowByOwner() {
             return (userIsOwner === true && $stateParams.roundIndex === 0);
         }
 

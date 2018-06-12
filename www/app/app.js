@@ -36,7 +36,7 @@
 
         localStorageServiceProvider
             .setPrefix(configConstant.appName);
-    
+
         $urlRouterProvider.otherwise('init-page');
 
         $stateProvider
@@ -107,8 +107,8 @@
                 url: '/game-results',
                 templateUrl: 'app/game/game-results.html',
                 params: {
-                    gameId: null,
-                    user: null
+                    game: null,
+                    winner: null
                 }
             });
     }

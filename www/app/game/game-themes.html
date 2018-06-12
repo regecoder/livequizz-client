@@ -5,15 +5,9 @@
     <ons-page ng-controller="GameThemesController as gameThemes">
 
     <ons-toolbar class="header">
-        <div class="left">
-            <ons-toolbar-button ng-click="menu.toggleMenu()">
-                <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
-            </ons-toolbar-button>
-        </div>
-        <div class="center name">{{gameThemes.userPseudo}}</div>
-        <div class="right">{{gameThemes.time}}</div>
+        <div class="center logo">Live quizz</div>
+        <div class="right timer">{{gameThemes.displayTime()}}</div>
     </ons-toolbar>
-
 
     <!-- FOND -->
     <div class="fond-i"></div>
@@ -25,7 +19,7 @@
         <div id="main">
 
             <div class="o-cartouche mt20 mb15 mb10">
-                <div class="o-titre">Votez pour le thème de la partie !</div>
+                <div class="o-titre">Votez pour le thème de la manche !</div>
             </div>
 
             <div class="o-theme-container">

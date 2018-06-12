@@ -28,6 +28,10 @@
 
         vm.time = '';
 
+        vm.displayTime = function() {
+            return (_.isNumber(vm.time) && vm.time > 0 ? vm.time : '');
+        };
+
         socket.on('themeVoted', themeVoted);
         socket.on('quizStarted', quizStarted);
         socket.on('quizBeginningTETick', quizBeginningTETick);

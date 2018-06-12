@@ -1,0 +1,123 @@
+/* Général */
+
+.button:disabled,
+.button[disabled]
+{
+	opacity: 0.7;
+}
+
+/* Listes */
+
+.person-list {
+	background-color: #ffffff;
+	margin-top: 15px;
+}
+
+.o-cartouche-list {
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.height-list-res {
+    height: calc(100vh - 270px);
+}
+
+.height-list-lan {
+    height: calc(100vh - 320px);
+}
+
+/* Thèmes */
+
+.o-btn-theme {
+    height: 40%;
+}
+
+.notification {
+    top: -10px;
+    right: -10px;
+    height: 35px;
+    min-width: 35px;
+    font-size: 1.5em;
+    padding-top: 12px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+/* Questions */
+
+.r-question {
+    background-color:#ea5b23;
+    height:100px;
+    border-radius: 8px;
+    padding: 10px;
+    color:#fff;
+    line-height: 1.0em;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	font-family: 'Montserrat-Bold';
+	font-size: 1.4em;
+	/*line-height: 1;*/
+	letter-spacing: -1px;
+}
+
+.r-answers-container {
+    display: block;
+    height:calc(100vh - 184px);
+    text-decoration: none;
+}
+
+.r-answer-button {
+    /*display: table;*/
+    background-color:#fff;
+    height:22%;
+    width: 100%;
+    margin-bottom: 4%;
+    color: #000;
+    padding: 10px;
+    font-family:'Montserrat-Regular';
+    font-size: 1.1em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.r-answer-button.button:disabled,
+.r-answer-button.button[disabled]
+{
+	/*opacity: 1.0;*/
+}
+
+.answer-false {
+    background-color: #ff0000;
+}
+
+.answer-true {
+    background-color: #00ff00;
+}
+
+.timer {
+	position: absolute;
+	top: 8px;
+	right: 10px;
+	font-family: 'Montserrat-Bold';
+	font-size: 1.5em;
+	color: #ffffff;
+}
+
+.points {
+	margin-top: 15px;
+	margin-left: 10px;
+	font-family: 'Montserrat-Bold';
+	font-size: 1.0em;
+	color: #ffffff;
+}
+
+.total-points {
+	white-space: nowrap;
+}

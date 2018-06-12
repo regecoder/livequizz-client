@@ -1,0 +1,56 @@
+<!-- rv0.0.1 -->
+<!-- NE PAS MODIFIER LES TAGS ng- et var -->
+
+<ons-navigator var="onsNavigator">
+    <ons-page ng-controller="GameQuestionController as gameQuestion">
+        <ons-toolbar class="header">
+            <div class="center logo">Live quizz</div>
+            <div class="right pie degree">
+                <span class="block"></span>
+                <span id="time">{{gameQuestion.time}}</span>
+            </div>
+        </ons-toolbar>
+
+        <!-- OVERLAY -->
+        <div id="overlay"></div>
+
+        <!-- FOND -->
+        <div class="fond-q">
+            <div class="fond-2"></div>
+            <div class="jasper"></div>
+            <div class="bandeau"></div>
+            <div class="bulle"><span>{{gameQuestion.questionNumber()}}</span></div> <!-- numéro de la question -->
+            <div class="tramebulle"></div>
+
+            <div id="animation">
+                <div id="anim1"></div>
+                <div id="anim2"></div>
+                <div id="anim3"></div>
+                <div id="anim4"></div>
+                <div id="anim5"></div>
+            </div>  
+        </div>
+
+        <div id="page-wrapper">
+            <div id="main">
+                <div class="o-question mt15 mb10">
+                    <div class="o-theme-text">{{gameQuestion.question.text}}</div>
+                </div>
+                <div class="o-answers-container">
+                    <div class="o-answer-card" ng-click="gameQuestion.onClickAnswerButton(1)" ng-class="gameQuestion.onClassAnswerButton(1)">
+                        <div class="o-answer-text">{{gameQuestion.question.answer[0].text}}</div>
+                    </div>
+                    <div class="o-answer-card" ng-click="gameQuestion.onClickAnswerButton(2)" ng-class="gameQuestion.onClassAnswerButton(2)">
+                        <div class="o-answer-text">{{gameQuestion.question.answer[1].text}}</div>
+                    </div>
+                    <div class="o-answer-card" ng-click="gameQuestion.onClickAnswerButton(3)" ng-class="gameQuestion.onClassAnswerButton(3)">
+                        <div class="o-answer-text">{{gameQuestion.question.answer[2].text}}</div>
+                    </div>
+                    <div class="o-answer-card" ng-click="gameQuestion.onClickAnswerButton(4)" ng-class="gameQuestion.onClassAnswerButton(4)">
+                        <div class="o-answer-text">{{gameQuestion.question.answer[3].text}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ons-page>
+</ons-navigator>

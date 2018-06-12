@@ -1,10 +1,12 @@
 # Live Quizz Client
 
+[Voir la page de présentation](https://regecoder.github.io/livequizz-onepage/)
+
 Fait partie du projet Live Quizz, prototype de jeu de quiz sur mobile multi-joueurs en présentiel
 
-Développé en Février 2016
+Dans le cadre d'un projet d'étude web mobile
 
-Projet Client
+Développé en Février 2016
 
 ## Outils utilisés
 - Angular

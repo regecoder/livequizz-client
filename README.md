@@ -2,6 +2,8 @@
 
 Fait partie du projet Live Quizz, prototype de jeu de quiz sur mobile multi-joueurs en présentiel
 
+Développé en Février 2016
+
 Projet Client
 
 ## Outils utilisés
@@ -9,3 +11,4 @@ Projet Client
 - Onsen UI
 - Cordova
 - socket.io
+- Grunt
